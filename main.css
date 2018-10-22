@@ -1,0 +1,88 @@
+body {
+  position: relative;
+}
+
+.container {
+  display: grid;
+  grid-template-areas: "title title title items items"
+    "game game game . ."
+    "game game game . ."
+    "game game game fame fame"
+    "game game game fame fame";
+  width: 1000px;
+  height: 1000px;
+}
+
+.title{
+  grid-area:title;
+  border:2px solid red;
+  background: blue;
+}
+
+.items{
+  grid-area:items;
+  border:2px solid red;
+  background: blue;
+}
+
+.game{
+  grid-area:game;
+  border:2px solid red;
+  background: blue;
+}
+
+.hallOfFame {
+  grid-area: fame;
+  border:2px solid red;
+  background: blue;
+}
+
+.heartConatiner {
+  grid-template-areas: "heart1 heart2 heart3";
+  display: grid;
+  border: 3px solid blue;
+  width: 300px;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: blue;
+  border: 2px solid red;
+}
+
+.heart1 {
+  grid-area: heart1;
+  background-image: url("hearts-full.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  /* width: 100px; */
+  /* height: 100px; */
+  border: 2px solid red;
+  /* background: red; */
+}
+
+.heart2 {
+  grid-area: heart2;
+  background-image: url("hearts-full.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  /* width: 100px; */
+  /* height: 100px; */
+  border: 2px solid red;
+  /* width: 250px; */
+  /* height: 250px; */
+  /* background: red; */
+}
+
+.heart3 {
+  grid-area: heart3;
+  background-image: url("hearts-empty.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  /* width: 100px; */
+  /* height: 100px; */
+  border: 2px solid red;
+  /* width: 250px; */
+  /* height: 250px; */
+  /* background: red; */
+}

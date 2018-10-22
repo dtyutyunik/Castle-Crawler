@@ -13,7 +13,7 @@ For instance if you lose all three lives in 35 seconds it will say Name: Time: 3
 In order to go up the castle there will be a staircase located in a certain area of the board.
 Upon reaching the staircase you go to next floor. In the sense of around your location a new board will be created with its own obstacles.
 
-
+```
 |------------------|        |--------|
 |                  |        |        |
 |                  |        | items which can be clicked|
@@ -23,7 +23,7 @@ Upon reaching the staircase you go to next floor. In the sense of around your lo
 |                  |        |--------|
 |                  |        |time keeper|
 |------------------|        |--------|
-
+```
 1. At the beginning you are prompted to insert your name.
 2. On the side will be instructions detailing what each key does aka how to move around. up, down, left, right.
 3. Your character will move one space at a time trying to get to the destined location.
@@ -36,17 +36,17 @@ Upon reaching the staircase you go to next floor. In the sense of around your lo
 8. once you get to the ladder at end of the level the stage reloads around you and now your at the next level
 
 Functions needed:
-getName()
-generateboard()
-generateObstacle()
-generateEnenmy()
-moveEnemy()
-generateExit()
-movePlayer()
-generateHeart()
-updateItems()
-useItems()
-removeItems()
-timeStart()
-timeEnd()
-recordScore()
+`getName()`
+`generateboard()`
+`generateObstacle()`
+`generateEnenmy()`
+`moveEnemy()`
+`generateExit() //staircase`
+`movePlayer()`
+`generateHeart()`
+`updateItems()`
+`useItems()`
+`removeItems()`
+`timeStart()`
+`timeEnd()`
+`recordScore()`
