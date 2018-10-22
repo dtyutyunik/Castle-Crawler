@@ -14,6 +14,7 @@ Once you die your score will be stored in the Hall of Fame section. This will be
 |                  |        |--------|
 |                  |        
 |                  |        |--------|
+|                  |        |score keeper|
 |------------------|        |--------|
 
 

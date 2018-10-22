@@ -1,3 +1,5 @@
 /**
-This is a test to see if it works
-**/
+  * @func test
+  * @desc test script
+  * @return {undefined}
+  */
