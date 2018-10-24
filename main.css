@@ -9,7 +9,7 @@ body {
   grid-template-areas:
     "game game game game game title"
     "game game game game game heartContainer"
-    "game game game game game items"
+    "game game game game game timeAlive"
     "game game game game game ."
     "game game game game game fame";
   width: 100vw;
@@ -26,46 +26,24 @@ body {
   background: blue;
 }
 
-.items {
-  grid-area: items;
-  display: flex;
+.timeAlive {
+  grid-area: timeAlive;
+  font-size: 100px;
+  vertical-align: middle;
+  text-align: center;
+  color:#61C06E;
   border: 2px solid red;
-  background: yellow;
+  background: black;
 }
 
-.itemName {
-  flex: 1;
-  border: 2px solid black;
-}
 
-.item1 {
-  flex: 1;
-  border: 2px solid black;
-}
-
-.item2 {
-  flex: 1;
-  border: 2px solid black;
-}
-
-.item3 {
-  flex: 1;
-  border: 2px solid black;
-}
-
-.item4 {
-  flex: 1;
-  border: 2px solid black;
-}
-
-.item5 {
-  flex: 1;
-  border: 2px solid black;
-}
 
 .gameOutter {
   position: relative;
   grid-area: game;
+  /* background-image:url("back.jpg"); */
+  /* background-size: contain; */
+
   /* width:1000px; */
   /* height: 700px; */
   border: 2px solid red;
@@ -74,12 +52,7 @@ body {
 
 .gameInner {
   position: absolute;
-  /* width:100px; */
-  /* height:100px; */
-  background: yellow;
-  /* background-image: url("hero.gif");
-            background-repeat:  no-repeat; */
-  background-size: contain;
+  /* background: black; */
 }
 
 .character {
@@ -89,29 +62,10 @@ body {
   background-size: contain;
   width: 100px;
   height: 100px;
-  border: 2px solid black;
+
 }
 
-.skeleton {
-  /* position: relative; */
-  /* left:200px; */
-  /* top:200px; */
-  /* background-image: url("skeleton.gif"); */
-  /* background-repeat:  no-repeat; */
-  /* background-size: contain; */
-  /* transform: scaleX(-1); */
-  /* width: 100px; */
-  /* height: 100px; */
-  /* border: 1px solid black; */
-}
 
-.wall {
-  /* background-image: url("wall.png"); */
-  background-size: contain;
-  width: 100px;
-  height: 100px;
-  border: 1px solid black;
-}
 
 .stair {
   background-image: url("stair.png");
@@ -129,6 +83,7 @@ body {
 
 .heartContainer {
   grid-area: heartContainer;
+  height:100px;
   display: flex;
   border: 3px solid blue;
   background: white;
@@ -137,28 +92,4 @@ body {
 
 .heartName {
   flex: 1;
-}
-
-.heart1 {
-  flex: 2;
-  background-image: url("hearts-full.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: 2px solid red;
-}
-
-.heart2 {
-  flex: 2;
-  background-image: url("hearts-full.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: 2px solid red;
-}
-
-.heart3 {
-  flex: 2;
-  background-image: url("hearts-empty.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: 2px solid red;
 }
