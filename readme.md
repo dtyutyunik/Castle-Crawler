@@ -53,10 +53,10 @@ Functions needed:
 
 
 Tuesday Goals
---Make functionality for movement of moveCharacter
+--Make functionality for movement of moveCharacter--done
 --make functionality for movement of skeletons
---make functionality for placement of skeletons and walls
---make functionality for limiting movement of character outside of border walls
---make functionality for 
+--make functionality for placement of skeletons and walls--done
+--make functionality for limiting movement of character outside of border walls--done
+--make functionality for
 if time allocates
 --changing map and reloading all the stuff

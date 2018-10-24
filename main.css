@@ -7,11 +7,11 @@ body {
 .container {
   display: grid;
   grid-template-areas:
-  "game game game game game title"
-  "game game game game game heartContainer"
-  "game game game game game items"
-  "game game game game game ."
-  "game game game game game fame";
+    "game game game game game title"
+    "game game game game game heartContainer"
+    "game game game game game items"
+    "game game game game game ."
+    "game game game game game fame";
   width: 100vw;
   height: 100vh;
   /* width:1200px; */
@@ -20,75 +20,79 @@ body {
   border: 2px solid blue;
 }
 
-
-.title{
-  grid-area:title;
-  border:2px solid red;
+.title {
+  grid-area: title;
+  border: 2px solid red;
   background: blue;
 }
 
-.items{
-  grid-area:items;
-  display:flex;
-  border:2px solid red;
+.items {
+  grid-area: items;
+  display: flex;
+  border: 2px solid red;
   background: yellow;
 }
 
-.itemName{
-  flex:1;
-  border:2px solid black;
-}
-.item1{
-  flex:1;
-  border:2px solid black;
+.itemName {
+  flex: 1;
+  border: 2px solid black;
 }
 
-.item2{
-  flex:1;
-  border:2px solid black;
-}
-.item3{
-  flex:1;
-  border:2px solid black;
-}
-.item4{
-  flex:1;
-  border:2px solid black;
-}
-.item5{
-  flex:1;
-  border:2px solid black;
+.item1 {
+  flex: 1;
+  border: 2px solid black;
 }
 
-.gameOutter{
+.item2 {
+  flex: 1;
+  border: 2px solid black;
+}
+
+.item3 {
+  flex: 1;
+  border: 2px solid black;
+}
+
+.item4 {
+  flex: 1;
+  border: 2px solid black;
+}
+
+.item5 {
+  flex: 1;
+  border: 2px solid black;
+}
+
+.gameOutter {
   position: relative;
-  grid-area:game;
+  grid-area: game;
   /* width:1000px; */
   /* height: 700px; */
-  border:2px solid red;
+  border: 2px solid red;
   background: gray;
 }
-.gameInner{
+
+.gameInner {
   position: absolute;
   /* width:100px; */
   /* height:100px; */
   background: yellow;
   /* background-image: url("hero.gif");
-  background-repeat:  no-repeat; */
+            background-repeat:  no-repeat; */
   background-size: contain;
 }
 
-.character{
+.character {
   position: relative;
   background-image: url("hero.gif");
-  background-repeat:  no-repeat;
+  background-repeat: no-repeat;
   background-size: contain;
   width: 100px;
   height: 100px;
   border: 2px solid black;
 }
 
-.skeleton{
+.skeleton {
   /* position: relative; */
   /* left:200px; */
   /* top:200px; */
@@ -101,7 +105,7 @@ body {
   /* border: 1px solid black; */
 }
 
-.wall{
+.wall {
   /* background-image: url("wall.png"); */
   background-size: contain;
   width: 100px;
@@ -109,7 +113,7 @@ body {
   border: 1px solid black;
 }
 
-.stair{
+.stair {
   background-image: url("stair.png");
   background-size: contain;
   width: 100px;
@@ -117,30 +121,26 @@ body {
   border: 1px solid black;
 }
 
-
-
-
-
 .hallOfFame {
   grid-area: fame;
-  border:2px solid red;
+  border: 2px solid red;
   background: purple;
 }
 
 .heartContainer {
-  grid-area:heartContainer;
+  grid-area: heartContainer;
   display: flex;
   border: 3px solid blue;
   background: white;
   border: 2px solid red;
 }
 
-.heartName{
-  flex:1;
+.heartName {
+  flex: 1;
 }
 
 .heart1 {
-  flex:2;
+  flex: 2;
   background-image: url("hearts-full.png");
   background-size: contain;
   background-repeat: no-repeat;
@@ -148,7 +148,7 @@ body {
 }
 
 .heart2 {
-  flex:2;
+  flex: 2;
   background-image: url("hearts-full.png");
   background-size: contain;
   background-repeat: no-repeat;
@@ -156,7 +156,7 @@ body {
 }
 
 .heart3 {
-  flex:2;
+  flex: 2;
   background-image: url("hearts-empty.png");
   background-size: contain;
   background-repeat: no-repeat;
