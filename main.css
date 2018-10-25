@@ -72,6 +72,7 @@ body {
   grid-area: fame;
   border: 2px solid red;
   background: transparent;
+  overflow: scroll;
 }
 
 .heartContainer {
@@ -90,10 +91,12 @@ body {
 .fame{
   color:green;
   border:2px solid black;
+  overflow: scroll;
 }
 .shame{
   color:red;
   border:2px solid black;
+  /* overflow: scroll; */
 }
 h2{
   font-family: impact;

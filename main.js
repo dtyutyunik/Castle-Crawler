@@ -143,7 +143,7 @@ document.addEventListener("keyup", keys=> {
     case 38: moveUp(hero); break;
     case 39: moveRight(hero); break;
     case 40: moveDown(hero); break;
-    case 65: prinTouch();break;
+    case 65: touchSomething(princess,"princess");break;
   }
 });
 
@@ -166,27 +166,6 @@ function wallTouch3(direction) {
     }
   });
 }
-
-function touching(){
-  // let touchX= 0;
-  // let touchY=0;
-// console.log("enter");
-  //if true it will lose a life, otherwise nothing
-  // console.log(skeletons[0]);
-  // console.log(skeletons[1]);
-   skeletons.some(function(checking){
-    // console.log(checking);
-      if(hero.x===checking.x && hero.y===checking.y){
-      console.log(checking);
-      console.log("touched");
-      // console.log(`not working`);
-      // return true;
-    }
-  });
-  // console.log("working");
-
-}
-setInterval(touching,700);
 
 
 //hero is the coordinates of the character
@@ -227,9 +206,7 @@ const moveRight = (item) => {
 };
 
 
-
-//wall collision, if you are touching its borders means you collided with it
-function skellTouch(){
+function touchSomething(item,itemString){
 
   let charLeft=parseInt(character.style.left);
   let charRight=parseInt(charLeft)+100;
@@ -237,65 +214,37 @@ function skellTouch(){
   let charBottom=charTop+100;
 
 
-  for(let i=0;i<skeletons.length;i++){
+  for(let i=0;i<item.length;i++){
 
-      let skelLeft=parseInt(document.querySelector(`.skeletons${i}`).style.left);
-      let skelRight=skelLeft+100;
-      let skelTop=parseInt(document.querySelector(`.skeletons${i}`).style.top);
-      let skelBottom=skelTop+100;
+    let itemLeft=parseInt(document.querySelector(`.${itemString}${i}`).style.left);
+    let itemRight=itemLeft+100;
+    let itemTop=parseInt(document.querySelector(`.${itemString}${i}`).style.top);
+    let itemBottom=itemTop+100;
 
-      //if its spaces are the exact same
-      if(charLeft===skelLeft&&charTop===skelTop&&charRight===skelRight&&charBottom===skelBottom){
-        console.log(`skell${i}`);
+      if(charLeft===itemLeft&&charTop===itemTop&&charRight===itemRight&&charBottom===itemBottom){
 
-        loseLife();
+          if(itemString==="skeletons"){
+              loseLife();
+          }
+          else if(itemString==="princess"){
+              addToBoard("alive");
+          }
+          else if(itemString==="stairCase")
+            {
+              createBoard(900,900,"yellow");
+            }
       }
-
   }
 }
 
-// console.log(stairCase);
 
-function ladderTouch(){
-  let charLeft=parseInt(character.style.left);
-  let charRight=parseInt(charLeft)+100;
-  let charTop=parseInt(character.style.top);
-  let charBottom=charTop+100;
+setInterval(function(){
+  touchSomething(skeletons,"skeletons");
+  touchSomething(stairCase,"stairCase");
 
-// console.log(document.querySelector(`stairCase0`));
-
-  let stairLeft=parseInt(document.querySelector(`.stairCase0`).style.left);
-  let stairRight=stairLeft+100;
-  let stairTop=parseInt(document.querySelector(`.stairCase0`).style.top);
-  let stairBottom=stairTop+100;
-
-if(charLeft===stairLeft&&charTop===stairTop&&charRight===stairRight&&charBottom===stairBottom){
-  console.log("ladder woot woot");
-  createBoard(900,900,"yellow");
-}
+},500);
 
 
-}
-
-function prinTouch(){
-  let charLeft=parseInt(character.style.left);
-  let charRight=parseInt(charLeft)+100;
-  let charTop=parseInt(character.style.top);
-  let charBottom=charTop+100;
-
-  let stairLeft=parseInt(document.querySelector(`.princess0`).style.left);
-  let stairRight=stairLeft+100;
-  let stairTop=parseInt(document.querySelector(`.princess0`).style.top);
-  let stairBottom=stairTop+100;
-
-  if(charLeft===stairLeft&&charTop===stairTop&&charRight===stairRight&&charBottom===stairBottom){
-    // console.log("Noice");
-    addToBoard("alive");
-  }
-}
-
-// setInterval(skellTouch,500);
-setInterval(ladderTouch,500);
 
 
 
