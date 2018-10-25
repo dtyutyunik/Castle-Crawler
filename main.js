@@ -15,6 +15,10 @@ const walls = [
   {x: 0,y: 4},
   {x: 1,y: 2},
   {x: 1,y: 3},
+  {x: 5,y: 4},
+  {x: 6,y: 4},
+  {x: 7,y: 4},
+
   // {x: 2,y: 2},
   // {x: 2,y: 3},
   // {x: 3,y: 3},
@@ -32,8 +36,8 @@ let gameHeight=gameDesign.style.height;
 function createBoard(width, height, color){
 
   //max size is 700
-  if(height>700){
-    gameHeight=700;
+  if(height>=800){
+    gameHeight=800;
   }
   else{
     gameHeight= height;
@@ -49,7 +53,7 @@ function createBoard(width, height, color){
 
 }
 //
-createBoard(1000,1000,"black");
+createBoard(800,800,"black");
 
 
 //add life
@@ -80,7 +84,7 @@ const skeletons = [
   {x: 3, y: 4},
   {x: 2, y: 2},
   {x: 5, y: 5},
-  // {x: 7, y: 7},
+  {x: 2, y: 6},
   {x: 6, y: 6}
 ];
 
@@ -328,7 +332,7 @@ function skellTouch(){
       let skelBottom=skelTop+100;
 
       //if its spaces are the exact same
-      if(charLeft===skelLeft&&charTop===skelTop&&charRight===skelRight&&charTop===skelTop){
+      if(charLeft===skelLeft&&charTop===skelTop&&charRight===skelRight&&charBottom===skelBottom){
         console.log(`skell${i}`);
 
 
@@ -338,10 +342,36 @@ function skellTouch(){
   }
 }
 
+console.log(stairCase);
+
+function ladderTouch(){
+  let charLeft=parseInt(character.style.left);
+  let charRight=parseInt(charLeft)+100;
+  let charTop=parseInt(character.style.top);
+  let charBottom=charTop+100;
+
+// console.log(document.querySelector(`stairCase0`));
+
+  let stairLeft=parseInt(document.querySelector(`.stairCase0`).style.left);
+  let stairRight=stairLeft+100;
+  let stairTop=parseInt(document.querySelector(`.stairCase0`).style.top);
+  let stairBottom=stairTop+100;
 
 
-;
+
+if(charLeft===stairLeft&&charTop===stairTop&&charRight===stairRight&&charBottom===stairBottom){
+  console.log("ladder woot woot");
+  createBoard(900,900,"yellow");
+}
+
+
+}
+
+
 setInterval(skellTouch,500);
+setInterval(ladderTouch,500);
+
+
 
 function moveSkel(element,direction){
   let skel=document.querySelector(element);
@@ -480,7 +510,8 @@ function displayHearts(){
     heart0="url('hearts-empty.png')";
     heart1="url('hearts-empty.png')";
     heart2="url('hearts-empty.png')";
-    recordTime();
+    // recordTime();
+
     console.log("dead");
     // alert("You died a horrible death");
   }
@@ -489,6 +520,9 @@ function displayHearts(){
   document.querySelector('.hearts2').style.backgroundImage=heart2;
 
 }
+
+
+
 let i=0;
 
 function showTime(){
@@ -513,22 +547,59 @@ let display=document.querySelector(".timeAlive").innerText;
   }
 
   i++;
-  document.querySelector(".timeAlive").innerText=display;
+  document.querySelector(".timeAlive").innerText=`${display}`;
 }
 
 setInterval(showTime,1000);
 
+
+///////////////Local Storage for Score Kepper
+
+
 window.localStorage;
 
-if(typeof(Storage)!== "undefined"){
-  console.log("store");
-}
-else{
-  console.log('no store');
+
+var scoreKeep= [
+  {name: "Dima", time: 48, status: "alive"},
+  {name: "Kevin",time: 95, status: "dead"},
+  {name: "Sam", time: 29, status: "alive"},
+];
+
+
+var printScore=JSON.parse(localStorage.getItem('scores'));
+
+
+function showPoints(){
+let infoShame="";
+let infoFame="";
+localStorage.setItem('scores', JSON.stringify(scoreKeep));
+printScore=JSON.parse(localStorage.getItem('scores'));
+
+  for(let i=0;i<printScore.length;i++){
+
+    if(printScore[i].status==="dead"){
+        infoShame+=`<li>${printScore[i].name} with time of: ${printScore[i].time} seconds, status of ${printScore[i].status}</li>`;
+    }
+    else if(printScore[i].status==="alive"){
+      infoFame+=`<li>`+`${printScore[i].name} with time of: ${printScore[i].time} seconds, status of ${printScore[i].status}` +`</li>`;
+    }
+  }
+    document.querySelector('.fame').innerHTML= infoFame;
+    document.querySelector('.shame').innerHTML= infoShame;
 }
 
-function recordTime(){
-  localStorage.setItem("score",setInterval(showTime,1000)-10);
-  let storeTime+=localStorage.getItem("score");
-  document.querySelector(".hallOfFame").innerText=storeTime;
+showPoints();
+
+
+function addToBoard(howIdo){
+  let whoMe=prompt("what is your name?");
+  scoreKeep.push({name: whoMe, time: setInterval(showTime,1000), status:howIdo});
+  // localStorage.setItem('scores', JSON.stringify(scoreKeep));
+  localStorage.setItem('scores', JSON.stringify(scoreKeep));
+
+  //if status is dead, then dead, if alive then alive
+  showPoints();
 }
+
+// addToBoard("alive");
+// addToBoard("dead");

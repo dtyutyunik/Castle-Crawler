@@ -10,18 +10,19 @@ body {
     "game game game game game title"
     "game game game game game heartContainer"
     "game game game game game timeAlive"
-    "game game game game game ."
+    "game game game game game fame"
     "game game game game game fame";
   width: 100vw;
   height: 100vh;
   /* width:1200px; */
   /* height:800px; */
   background: white;
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
 }
 
 .title {
   grid-area: title;
+  font-size: 30px;
   border: 2px solid red;
   background: blue;
 }
@@ -29,7 +30,6 @@ body {
 .timeAlive {
   grid-area: timeAlive;
   font-size: 100px;
-  vertical-align: middle;
   text-align: center;
   color:#61C06E;
   border: 2px solid red;
@@ -41,18 +41,13 @@ body {
 .gameOutter {
   position: relative;
   grid-area: game;
-  /* background-image:url("back.jpg"); */
-  /* background-size: contain; */
-
-  /* width:1000px; */
-  /* height: 700px; */
+  width: 100%;
   border: 2px solid red;
   background: gray;
 }
 
 .gameInner {
   position: absolute;
-  /* background: black; */
 }
 
 .character {
@@ -62,23 +57,21 @@ body {
   background-size: contain;
   width: 100px;
   height: 100px;
-
 }
 
 
-
-.stair {
+/* .stair {
   background-image: url("stair.png");
   background-size: contain;
   width: 100px;
   height: 100px;
   border: 1px solid black;
-}
+} */
 
 .hallOfFame {
   grid-area: fame;
   border: 2px solid red;
-  background: purple;
+  background: transparent;
 }
 
 .heartContainer {
@@ -92,4 +85,18 @@ body {
 
 .heartName {
   flex: 1;
+}
+
+.fame{
+  color:green;
+  border:2px solid black;
+}
+.shame{
+  color:red;
+  border:2px solid black;
+}
+h2{
+  font-family: impact;
+  text-align: center;
+  /* border: 1px solid blue; */
 }
