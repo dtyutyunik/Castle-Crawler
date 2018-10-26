@@ -1,7 +1,6 @@
 body {
   margin: 0;
   padding: 0;
-  /* position: relative; */
 }
 
 .container {
@@ -14,27 +13,29 @@ body {
     "game game game game game fame";
   width: 100vw;
   height: 100vh;
-  /* width:1200px; */
-  /* height:800px; */
   background: black;
-  /* border: 2px solid blue; */
 }
+
 
 .title {
   grid-area: title;
-  font-size: 30px;
-  border: 2px solid gray;
+  font-size: 40px;
+  /* border: 2px solid gray; */
   background: black;
   color:white;
+  font-family: 'Press Start 2P', cursive;
+  max-width: 300px;
 }
 
 .timeAlive {
   grid-area: timeAlive;
-  font-size: 100px;
+  font-size: 50px;
   text-align: center;
   color:#61C06E;
   border: 2px solid gray;
   background: black;
+  min-width: 98%;
+  font-family: 'Press Start 2P', cursive;
 }
 
 
@@ -42,13 +43,14 @@ body {
 .gameOutter {
   position: relative;
   grid-area: game;
-  width: 100%;
-  /* border: 2px solid red; */
+  border: 2px solid gray;
   background: black;
 }
 
 .gameInner {
   position: absolute;
+  width:100%;
+  height:100%;
 }
 
 .character {
@@ -58,17 +60,9 @@ body {
   background-size: contain;
   width: 100px;
   height: 100px;
-  /* border:2px solid red; */
+
+
 }
-
-
-/* .stair {
-  background-image: url("stair.png");
-  background-size: contain;
-  width: 100px;
-  height: 100px;
-  border: 1px solid black;
-} */
 
 .hallOfFame {
   grid-area: fame;
@@ -76,37 +70,33 @@ body {
   background: transparent;
   overflow: scroll;
   color:white;
+
 }
 
 .heartContainer {
   grid-area: heartContainer;
-  height:100px;
+  height: 100px;
   display: flex;
   border: 2px solid gray;
   color:white;
-
   background: black;
-  /* border: 2px solid red; */
+
 }
 
-.heartName {
-  flex: 1;
-}
+
 
 .fame{
   color:green;
-  /* border:2px solid black; */
-  overflow: scroll;
+  max-width: 100%;
+
 }
 .shame{
   color:red;
-  /* border:2px solid black; */
-  color:red;
-  /* overflow: scroll; */
+  max-width: 100%;
 }
-h2{
-  font-family: impact;
+h1,h2{
+  letter-spacing: 3px;
   text-align: center;
   color:white;
-  /* border: 1px solid blue; */
+  font-family: 'Press Start 2P', cursive;
 }
