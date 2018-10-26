@@ -5,36 +5,62 @@ const gameDesign = document.querySelector('.gameInner');
 let gameWidth=gameDesign.style.width;
 let gameHeight=gameDesign.style.height;
 
+let backgroundSong=new Audio("background.mp3");
+let deadSong=new Audio("dead.mp3");
+backgroundSong.play();
 //Item creations via variable setting
 const hero = {x: 0,y: 0, life: 3};
 
-let stairCase = [{x: parseInt(gameWidth/100)-1,y: parseInt(gameHeight/100)-1}];
+// let stairCase = [{x: parseInt(gameWidth/100)-1,y: parseInt(gameHeight/100)-1}];
+let stairCase = [{x: 9  ,y: 7}];
 
 let walls = [
-  {x: 1,y: 4},
   {x: 1,y: 1},
-  {x: 0,y: 4},
   {x: 1,y: 2},
-  {x: 1,y: 3},
+  {x: 3,y: 1},
+  {x: 4,y: 1},
+  {x: 3,y: 2},
+  {x: 4,y: 2},
+  {x: 5,y: 2},
+  {x: 6,y: 2},
+  {x: 8,y: 2},
+  {x: 9,y: 2},
+  {x: 0,y: 4},
+  {x: 1,y: 6},
+  {x: 1,y: 4},
+  {x: 3,y: 6},
+  {x: 3,y: 4},
+  {x: 4,y: 5},
+  {x: 6,y: 6},
+  {x: 7,y: 7},
   {x: 5,y: 4},
+  {x: 5,y: 7},
   {x: 6,y: 4},
-  {x: 7,y: 4},
-  {x: 2,y: 3}
+  {x: 6,y: 1},
+  {x: 8,y: 5},
+  {x: 8,y: 4},
+  {x: 9,y: 4},
+  {x: 9,y: 1}
 ];
 
 let skeletons = [
-  {x: 3, y: 4},
-  {x: 2, y: 2},
-  {x: 5, y: 5},
+  {x: 2, y: 3},
+  {x: 2, y: 1},
+  {x: 7, y: 0},
+  {x: 7, y: 3},
   {x: 2, y: 6},
-  {x: 6, y: 6}
+  {x: 8, y: 6}
 ];
 
-const princess =[{x:0,y:5}];
 
-let heart=[{x:0,y:7}];
+let heart=[{x:0,y:5}];
 
-//createBoard
+
+// function placeObjects(name,item, srcImage,size){
+  // n.setAttribute("class", `${name}${i}`); //sets the class attribute with the name
+  // placeObjects("walls", walls, "wall.png",100);
+
+
 
 
 function createBoard(width, height, color){
@@ -54,6 +80,9 @@ function createBoard(width, height, color){
   gameDesign.style.background = color;
 
 }
+
+
+
 
 //send through name of array, object of the array in question and url image, size is the px image of the item
 function placeObjects(name,item, srcImage,size){
@@ -85,16 +114,59 @@ let newItem=document.createElement('div');
 }
 
 function level1(){
-  createBoard(1000,800,"black");
+  createBoard(1000,1000,"black");
   placeObjects("walls", walls, "wall.png",100);
   placeObjects("skeletons",skeletons,"skeleton.gif",100);
   placeObjects("stairCase",stairCase,"stair.png",100);
-  placeObjects("princess",princess,"prin2.gif",100);
   placeObjects("heart",heart,"hearts-full.png",50);
+  skeleMove(".skeletons0","left","right",420);
+  skelMoveShort(".skeletons1","up","down",500);
+  skeleMove(".skeletons2","left","right",400);
+  skeleMove(".skeletons3","up","down",380);
+  skelMoveShort(".skeletons4","up","down",500);
+  skelMoveShort(".skeletons5","left","right",380);
 
 }
 
+function finalLevel(){
+  // createBoard(1000,1000,"black");
+  // placeObjects("walls", walls, "wall.png",100);
+  createBoard(1000,1000,"black");
+  removeStuff("walls",walls);
+  removeStuff("skeletons",skeletons);
+  removeStuff("heart",heart);
+  removeStuff("stairCase",stairCase);
+  skeletons = [
+    {x: 5, y: 7}];
+placeObjects("skeletons",skeletons,"skeleton.gif",100);
+    // skelMoveShort(".skeletons0","left","right",300);
+
+  placeObjects("princess",princess,"prin2.gif",100);
+walls=[
+  {x: 3,y: 7},
+  {x: 4,y: 6},
+  {x: 4,y: 5},
+  {x: 4,y: 4},
+  {x: 4,y: 3},
+  {x: 4,y: 2},
+  {x: 4,y: 1},
+  {x: 4,y: 0},
+  {x: 7,y: 6},
+  {x: 8,y: 6},
+  {x: 9,y: 6},
+  {x: 6,y: 6},
+  {x: 6,y: 5},
+  {x: 6,y: 4},
+  {x: 6,y: 3},
+  {x: 6,y: 2},
+  {x: 6,y: 1},
+  {x: 6,y: 0}
+];
+  placeObjects("walls", walls, "wall.png",100);
+}
+
 level1();
+// finalLevel();
 
 // placeObjects("walls", walls, "wall.png",100);
 // placeObjects("skeletons",skeletons,"skeleton.gif",100);
@@ -205,6 +277,7 @@ const moveRight = (item) => {
 
 };
 
+const princess =[{x:5,y:0}];
 
 function touchSomething(item,itemString){
 
@@ -225,13 +298,16 @@ function touchSomething(item,itemString){
 
           if(itemString==="skeletons"){
               loseLife();
+              backgroundSong.pause();
+              deadSong.play();
+              backgroundSong.play();
           }
           else if(itemString==="princess"){
               addToBoard("alive");
           }
           else if(itemString==="stairCase")
             {
-              createBoard(900,900,"yellow");
+              finalLevel();
             }
       }
   }
@@ -242,13 +318,14 @@ setInterval(function(){
   touchSomething(skeletons,"skeletons");
   touchSomething(stairCase,"stairCase");
 
-},500);
-
-
+},300);
 
 
 
 function moveSkel(element,direction){
+
+//this  needs to be put in as an error determent when removing skelletons
+if(skeletons.length!==0){
   let skel=document.querySelector(element);
 
   posLeft = parseInt(skel.style.left);
@@ -263,32 +340,61 @@ function moveSkel(element,direction){
 
   skel.style.left = posLeft + 'px';
   skel.style.top = posTop + 'px';
-
+}
+// else{
+  // console.log("alal");
+// }
 }
 
+function skelMoveShort(enemy,direction1,direction2,time){
+  if(skeletons!==[]){
+    setTimeout(function(){moveSkel(enemy,direction1)},time);
+    setTimeout(function(){moveSkel(enemy,direction2)},time*2);
+    setTimeout(function(){moveSkel(enemy,direction2)},time*3);
+    setTimeout(function(){moveSkel(enemy,direction1)},time*4);
+  }
+  setInterval(function()
+  {
+    setTimeout(function(){moveSkel(enemy,direction1)},time);
+    setTimeout(function(){moveSkel(enemy,direction2)},time*2);
+    setTimeout(function(){moveSkel(enemy,direction2)},time*3);
+    setTimeout(function(){moveSkel(enemy,direction1)},time*4);
+  },time*4);
+}
 
-function skeleMove(enemy,direction1,direction2) {
+function skeleMove(enemy,direction1,direction2,time) {
+console.log(skeletons);
+  if(skeletons!==[]){
   //it moves the skeletion from beginning for 2 secs
-  setTimeout(function(){moveSkel(enemy,direction1)},500);
-  setTimeout(function(){moveSkel(enemy,direction1)},1000);
-  setTimeout(function(){moveSkel(enemy,direction2)},1500);
-  setTimeout(function(){moveSkel(enemy,direction2)},2000);
+  setTimeout(function(){moveSkel(enemy,direction1)},time);
+  setTimeout(function(){moveSkel(enemy,direction1)},time*2);
+  setTimeout(function(){moveSkel(enemy,direction2)},time*3);
+  setTimeout(function(){moveSkel(enemy,direction2)},time*4);
+  setTimeout(function(){moveSkel(enemy,direction2)},time*5);
+  setTimeout(function(){moveSkel(enemy,direction2)},time*6);
+  setTimeout(function(){moveSkel(enemy,direction1)},time*7);
+  setTimeout(function(){moveSkel(enemy,direction1)},time*8);
 
   //now the skeleton moves forever in 2 second interloop
   setInterval(function()
   {
-    setTimeout(function(){moveSkel(enemy,direction1)},500);
-    setTimeout(function(){moveSkel(enemy,direction1)},1000);
-    setTimeout(function(){moveSkel(enemy,direction2)},1500);
-    setTimeout(function(){moveSkel(enemy,direction2)},2000);
-  },2000);
+    setTimeout(function(){moveSkel(enemy,direction1)},time);
+    setTimeout(function(){moveSkel(enemy,direction1)},time*2);
+    setTimeout(function(){moveSkel(enemy,direction2)},time*3);
+    setTimeout(function(){moveSkel(enemy,direction2)},time*4);
+    setTimeout(function(){moveSkel(enemy,direction2)},time*5);
+    setTimeout(function(){moveSkel(enemy,direction2)},time*6);
+    setTimeout(function(){moveSkel(enemy,direction1)},time*7);
+    setTimeout(function(){moveSkel(enemy,direction1)},time*8);
+  },time*8);
+}
 
 }
 //we call the function so it activates right away
-skeleMove(".skeletons0","up","down");
-skeleMove(".skeletons3","up","down");
-skeleMove(".skeletons2","left","right");
-skeleMove(".skeletons4","left","right");
+// skeleMove(".skeletons0","left","right");
+// // skeleMove(".skeletons1","up","down");
+// skeleMove(".skeletons2","left","right");
+// skeleMove(".skeletons3","up","down");
 
 
 
@@ -360,6 +466,7 @@ function displayHearts(){
     heart0="url('hearts-empty.png')";
     heart1="url('hearts-empty.png')";
     heart2="url('hearts-empty.png')";
+
     addToBoard("dead");
   }
   document.querySelector('.hearts0').style.backgroundImage=heart0;
@@ -370,7 +477,7 @@ function displayHearts(){
 
 
 
-let i=10;
+let i=15;
 
 function showTime(){
 
@@ -379,7 +486,15 @@ function showTime(){
 
 let display=document.querySelector(".timeAlive").innerText;
 
-  if(i<10){
+  if(i<0){
+    display="Game Over";
+    document.querySelector(".timeAlive").style.color="red";
+    stopTheClock();
+    addToBoard("dead");
+
+  }
+
+  else if(i<10){
     display=` 0:0${i}`;
   }
   else if(i<60){
@@ -399,7 +514,13 @@ let display=document.querySelector(".timeAlive").innerText;
 
 }
 
-setInterval(showTime,1000);
+let clock =  setInterval(showTime,1000);
+
+function stopTheClock(){
+  clearInterval(clock);
+}
+
+
 
 
 ///////////////Local Storage for Score Kepper
@@ -456,4 +577,23 @@ for(let i=0;i<updateScore.length;i++){
   }
     document.querySelector('.fame').innerHTML= infoFame;
     document.querySelector('.shame').innerHTML= infoShame;
+}
+
+
+
+function removeStuff(name,item){
+  //makes the array 0
+console.log(item.length-1);
+  for(let i=item.length-1;i>=0;i--){
+    document.querySelector(`.${name}${i}`).remove();
+  }
+//doesnt work for item
+if(item===walls){
+walls = [];
+}
+
+if(item===skeletons){
+skeletons = [];
+}
+
 }

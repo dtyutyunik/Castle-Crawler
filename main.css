@@ -16,15 +16,16 @@ body {
   height: 100vh;
   /* width:1200px; */
   /* height:800px; */
-  background: white;
+  background: black;
   /* border: 2px solid blue; */
 }
 
 .title {
   grid-area: title;
   font-size: 30px;
-  border: 2px solid red;
-  background: blue;
+  border: 2px solid gray;
+  background: black;
+  color:white;
 }
 
 .timeAlive {
@@ -32,7 +33,7 @@ body {
   font-size: 100px;
   text-align: center;
   color:#61C06E;
-  border: 2px solid red;
+  border: 2px solid gray;
   background: black;
 }
 
@@ -42,8 +43,8 @@ body {
   position: relative;
   grid-area: game;
   width: 100%;
-  border: 2px solid red;
-  background: gray;
+  /* border: 2px solid red; */
+  background: black;
 }
 
 .gameInner {
@@ -57,6 +58,7 @@ body {
   background-size: contain;
   width: 100px;
   height: 100px;
+  /* border:2px solid red; */
 }
 
 
@@ -70,18 +72,21 @@ body {
 
 .hallOfFame {
   grid-area: fame;
-  border: 2px solid red;
+  border: 2px solid gray;
   background: transparent;
   overflow: scroll;
+  color:white;
 }
 
 .heartContainer {
   grid-area: heartContainer;
   height:100px;
   display: flex;
-  border: 3px solid blue;
-  background: white;
-  border: 2px solid red;
+  border: 2px solid gray;
+  color:white;
+
+  background: black;
+  /* border: 2px solid red; */
 }
 
 .heartName {
@@ -90,16 +95,18 @@ body {
 
 .fame{
   color:green;
-  border:2px solid black;
+  /* border:2px solid black; */
   overflow: scroll;
 }
 .shame{
   color:red;
-  border:2px solid black;
+  /* border:2px solid black; */
+  color:red;
   /* overflow: scroll; */
 }
 h2{
   font-family: impact;
   text-align: center;
+  color:white;
   /* border: 1px solid blue; */
 }
