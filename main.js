@@ -660,25 +660,21 @@ function startGame(){
   level1();
 }
 
-function ruler(){
 
-  console.log(5);
-let isVisible=document.querySelector("#controls1");
-console.log(isVisible);
 
-if(isVisible.style.display==="none"){
-  document.querySelector(".rules1").style.visibility="block";
+
+function controls(){
+    document.querySelector(".controls1").style.display="block";
 }
-else{
-document.querySelector(".rules1").style.visibility="none";
-}
-// else if(isVisible==="visible"){
-  // document.querySelector(".rules1").style.visibility="hidden";
-// }
 
-// else{
-  // document.querySelector(".loadingScreenOutter").style.visibility=hidden;
-// }
-
+function controlsExit(){
+  document.querySelector(".controls1").style.display="none";
 }
-// document.querySelector()
+
+function story(){
+    document.querySelector(".story1").style.display="block";
+}
+
+function storyExit(){
+  document.querySelector(".story1").style.display="none";
+}

@@ -11,7 +11,6 @@ body {
   right:0;
   bottom:0;
   z-index: 1;
-  /* border:1px solid red; */
   background: black;
 }
 
@@ -21,18 +20,32 @@ body {
   left: 100px;
   right:100px;
   bottom: 100px;
-  background: red;
+  background: #dc143c;
 }
 
-#controls1{
-/* visibility: visible; */
-display: block;
+.controls1{
+display: none;
 width: 400px;
 height: 200px;
 position: absolute;
 top:200px;
 left:500px;
-border:1px solid green;
+padding-left: 8px;
+background: black;
+opacity: .8;
+color:white;
+font-family: 'Press Start 2P', cursive;
+}
+
+.story1{
+display: none;
+letter-spacing: 4px;
+width: 600px;
+height: 300px;
+position: absolute;
+top:200px;
+left:400px;
+padding-left: 8px;
 background: black;
 opacity: .8;
 color:white;
@@ -44,15 +57,15 @@ button.story{
   position: absolute;
   top:540px;
   left:450px;
+
 }
 
 button.controls{
   position: absolute;
   top:540px;
   left:610px;
+
 }
-
-
 
 button.playGame{
   position: absolute;
@@ -74,7 +87,7 @@ button{
 }
 button:hover{
   /* transform: skew(2); */
-  /* color:red; */
+  color:#dc143c;
 }
 
 
@@ -87,7 +100,7 @@ button:hover{
   width: 100px;
   height: 100px;
   top:300px;
-animation: moveHero 3.5s linear forwards;
+  animation: moveHero 3.5s linear forwards;
 }
 .princess1{
   position: absolute;
