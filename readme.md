@@ -52,7 +52,32 @@ Functions needed:
 `timeEnd()`
 `recordScore()`
 
+Code Most Proud of:
 
+removeStuff("walls",walls);
+
+function removeStuff(name,item){
+  //removes elements from the dom
+  for(let i=item.length-1;i>=0;i--){
+    document.querySelector(`.${name}${i}`).remove();
+  }
+//sets the array of objects to a empty array
+  if(item===walls){
+    walls = [];
+  }
+  if(item===skeletons){
+    skeletons = [];
+  }
+  if(item===dragon){
+    dragon = [];
+  }
+  if(item===princess){
+    princess=[];
+  }
+  if(item===stairCase){
+    stairCase=[];
+  }
+}
 
 
 

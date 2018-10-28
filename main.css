@@ -3,221 +3,214 @@ body {
   padding: 0;
 }
 
-
-.loadingScreenOutter{
+.loadingScreenOutter {
   position: absolute;
-  top:0;
-  left:0;
-  right:0;
-  bottom:0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 1;
   background: black;
 }
 
-.loadingScreenInner{
+.loadingScreenInner > div{
   position: absolute;
-  top:100px;
+
+}
+
+.loadingScreenInner {
+  position: absolute;
+  top: 100px;
   left: 100px;
-  right:100px;
+  right: 100px;
   bottom: 100px;
   background: #dc143c;
 }
 
-.controls1{
-display: none;
-width: 400px;
-height: 200px;
-position: absolute;
-top:200px;
-left:500px;
-padding-left: 8px;
-background: black;
-opacity: .8;
-color:white;
-font-family: 'Press Start 2P', cursive;
+.controls1 {
+  display: none;
+  width: 400px;
+  height: 200px;
+  top: 100px;
+  left: 400px;
+  padding-left: 8px;
+  background: black;
+  opacity: .8;
+  color: white;
+  font-family: 'Press Start 2P', cursive;
 }
 
-.story1{
-display: none;
-letter-spacing: 4px;
-width: 600px;
-height: 300px;
-position: absolute;
-top:200px;
-left:400px;
-padding-left: 8px;
-background: black;
-opacity: .8;
-color:white;
-font-family: 'Press Start 2P', cursive;
+.story1 {
+  display: none;
+  letter-spacing: 4px;
+  width: 600px;
+  height: 300px;
+  top: 100px;
+  left: 300px;
+  padding-left: 8px;
+  background: black;
+  opacity: .8;
+  color: white;
+  font-family: 'Press Start 2P', cursive;
 }
 
+button.story {
+  top: 640px;
+  left: 350px;
+}
 
-button.story{
+button.controls {
+  top: 640px;
+  left: 510px;
+}
+
+button.playGame {
+  top: 640px;
+  left: 670px;
+}
+
+button {
   position: absolute;
-  top:540px;
-  left:450px;
-
-}
-
-button.controls{
-  position: absolute;
-  top:540px;
-  left:610px;
-
-}
-
-button.playGame{
-  position: absolute;
-  top:540px;
-  left:770px;
-}
-
-button{
-  /* position: absolute; */
-  left:100px;
-  top:300px;
   width: 150px;
   height: 60px;
   font-size: 15px;
-  color:white;
+  color: white;
   background: black;
   font-family: 'Press Start 2P', cursive;
   border-radius: 25%;
 }
-button:hover{
-  /* transform: skew(2); */
-  color:#dc143c;
+
+button:hover {
+  color: #dc143c;
 }
 
-
+h1.landing {
+  font-size: 50px;
+}
 
 .character1 {
-  position: absolute;
-  background-image: url("hero.gif");
+  background-image: url("../images/hero.gif");
   background-repeat: no-repeat;
   background-size: contain;
   width: 100px;
   height: 100px;
-  top:300px;
+  top: 200px;
   animation: moveHero 3.5s linear forwards;
 }
-.princess1{
-  position: absolute;
-  background-image: url("prin2.gif");
+
+.princess1 {
+  background-image: url("../images/prin2.gif");
   background-repeat: no-repeat;
   background-size: contain;
   width: 100px;
   height: 100px;
-  top:300px;
-  left:400px;
+  top: 200px;
+  left: 400px;
   animation: movePrincess 3s linear forwards;
 }
 
-.loadingSkel1{
-  position: absolute;
-  background-image: url("skeleton.gif");
+.loadingSkel1 {
+  background-image: url("../images/skeleton.gif");
   background-repeat: no-repeat;
   background-size: contain;
   width: 100px;
   height: 100px;
-  top:200px;
-  left:300px;
+  top: 100px;
+  left: 300px;
   transform: scaleX(-1);
   animation: move 3s linear forwards;
 }
 
-.loadingSkel2{
-  position: absolute;
-  background-image: url("skeleton.gif");
+.loadingSkel2 {
+  background-image: url("../images/skeleton.gif");
   background-repeat: no-repeat;
   background-size: contain;
   width: 100px;
   height: 100px;
-  top:400px;
-  left:300px;
+  top: 200px;
+  left: 300px;
   transform: scaleX(-1);
   animation: move 3s linear forwards;
 }
 
-.loadingSkel3{
-  position: absolute;
-  background-image: url("skeleton.gif");
+.loadingSkel3 {
+  background-image: url("../images/skeleton.gif");
   background-repeat: no-repeat;
   background-size: contain;
   width: 100px;
   height: 100px;
-  top:300px;
-  left:300px;
-
+  top: 300px;
+  left: 300px;
   transform: scaleX(-1);
   animation: move 3s linear forwards;
-
 }
 
-.castle{
-  position: absolute;
-  background-image: url("castle.png");
+.castle {
+  background-image: url("../images/castle.png");
   background-repeat: no-repeat;
   background-size: contain;
   width: 200px;
   height: 200px;
-  top:200px;
-  right:0px;
-
+  top: 100px;
+  right: 0px;
 }
 
-@keyframes move{
-  20%{
-    left:300px;
+@keyframes move {
+  20% {
+    left: 300px;
   }
-  40%{
-    left:600px;
+
+  40% {
+    left: 566px;
   }
-  60%{
-    left:900px;
+
+  60% {
+    left: 832px;
   }
-  100%{
-    left:1200px;
+
+  100% {
+    left: 1050px;
     visibility: hidden;
   }
 }
 
-@keyframes movePrincess{
-  20%{
-    left:400px;
+@keyframes movePrincess {
+  20% {
+    left: 400px;
   }
-  40%{
-    left:700px;
+
+  40% {
+    left: 700px;
   }
-  60%{
-    left:1000px;
+
+  60% {
+    left: 900px;
   }
-  100%{
-    left:1200px;
+
+  100% {
+    left: 1100px;
     visibility: hidden;
   }
 }
 
-@keyframes moveHero{
-  20%{
-    left:0px;
+@keyframes moveHero {
+  20% {
+    left: 0px;
   }
-  40%{
-    left:400px;
+
+  40% {
+    left: 400px;
   }
-  60%{
-    left:700px;
+
+  60% {
+    left: 700px;
   }
-  100%{
-    left:1200px;
+
+  100% {
+    left: 1050px;
     visibility: hidden;
   }
 }
-
-
-
-
 
 .container {
   display: grid;
@@ -232,13 +225,12 @@ button:hover{
   background: black;
 }
 
-
 .title {
   grid-area: title;
   font-size: 40px;
   /* border: 2px solid gray; */
   background: black;
-  color:white;
+  color: white;
   font-family: 'Press Start 2P', cursive;
   max-width: 300px;
 }
@@ -247,31 +239,29 @@ button:hover{
   grid-area: timeAlive;
   font-size: 50px;
   text-align: center;
-  color:#61C06E;
+  color: #61C06E;
   border: 2px solid gray;
   background: black;
   min-width: 98%;
   font-family: 'Press Start 2P', cursive;
 }
 
-
-
 .gameOutter {
   position: relative;
   grid-area: game;
-  border: 2px solid gray;
+  /* border: 2px solid gray; */
   background: black;
 }
 
 .gameInner {
   position: absolute;
-  width:100%;
-  height:100%;
+  width: 100%;
+  height: 100%;
 }
 
 .character {
   position: relative;
-  background-image: url("hero.gif");
+  background-image: url("../images/hero.gif");
   background-repeat: no-repeat;
   background-size: contain;
   width: 100px;
@@ -283,8 +273,7 @@ button:hover{
   border: 2px solid gray;
   background: transparent;
   overflow: scroll;
-  color:white;
-
+  color: white;
 }
 
 .heartContainer {
@@ -292,25 +281,23 @@ button:hover{
   height: 100px;
   display: flex;
   border: 2px solid gray;
-  color:white;
+  color: white;
   background: black;
-
 }
 
-
-
-.fame{
-  color:green;
-  max-width: 100%;
-
-}
-.shame{
-  color:red;
+.fame {
+  color: green;
   max-width: 100%;
 }
-h1,h2{
+
+.shame {
+  color: red;
+  max-width: 100%;
+}
+
+h1, h2 {
   letter-spacing: 3px;
   text-align: center;
-  color:white;
+  color: white;
   font-family: 'Press Start 2P', cursive;
 }
