@@ -105,7 +105,7 @@ function level1(){
   skeleMove(".skeletons3","up","down",380);
   skelMoveShort(".skeletons4","up","down",500);
   skelMoveShort(".skeletons5","left","right",380);
-  // backgroundSong.play();
+  backgroundSong.play();
   showPoints();
 
   setInterval(function(){
@@ -167,7 +167,7 @@ function finalLevel(){
 // },200);
 
 
-level1(); //Calls Level1 of the game
+// level1(); //Calls Level1 of the game
 
 //sets parameters of arena
 const gameArena = (x,y) =>{
@@ -275,6 +275,11 @@ const moveRight = (item) => {
 
 };
 
+
+
+
+
+
 const princess =[{x:5,y:0}];
 
 function touchSomething(item,itemString){
@@ -305,6 +310,7 @@ function touchSomething(item,itemString){
           }
           else if(itemString==="princess"){
               addToBoard("alive");
+              stopTheClock();
               gameover=false; //removes event listener and freezes game in place
           }
           else if(itemString==="stairCase")
@@ -497,7 +503,7 @@ function displayHearts(){
 
 
 
-let timer=500;
+let timer=40;
 
 function showTime(){
 
@@ -548,27 +554,37 @@ function stopTheClock(){
 window.localStorage;
 
 
-var scoreKeep= [
-  {name: "Dima", time: 48, status: "alive"},
-  {name: "Kevin",time: 95, status: "dead"},
-  {name: "Sam", time: 29, status: "alive"},
-];
+// let scoreKeep= [
+//   {name: "Dima", time: 48, status: "alive"},
+//   {name: "Kevin",time: 95, status: "dead"},
+//   {name: "Sam", time: 29, status: "alive"}
+// ];
 
 
 let printScore=JSON.parse(localStorage.getItem('scores'));
 
+function getScores(){
+  return JSON.parse(localStorage.getItem('scores'))||[
+    {name: "Dima", time: 48, status: "alive"},
+    {name: "Kevin",time: 95, status: "dead"},
+    {name: "Sam", time: 29, status: "alive"}
+  ];
+  // if(updateScore===null){
+    // updateScore=scoreKeep;
+  // }
+}
 
 
 function addToBoard(howIdo){
   //if empty intialize with hardcoded scoreKeep
-  let updateScore=JSON.parse(localStorage.getItem('scores'));
-  if(updateScore===null){
-    updateScore=scoreKeep;
-  }
-
+  // let updateScore=JSON.parse(localStorage.getItem('scores'));
+  // if(updateScore===null){
+  //   updateScore=scoreKeep;
+  // }
+let updateScore=getScores();
   let whoMe=prompt("What is your name for the record books?");
   updateScore.push({name: whoMe, time: timer, status:howIdo});
-  console.log(scoreKeep);
+  // console.log(scoreKeep);
   localStorage.setItem('scores', JSON.stringify(updateScore));
   // localStorage.setItem('scores', JSON.stringify(scoreKeep));
 
@@ -582,7 +598,12 @@ setTimeout(reloadPage,3000);
 
 
 function showPoints(){
-let updateScore=JSON.parse(localStorage.getItem('scores'));
+let updateScore=getScores();
+// updateScore=JSON.parse(localStorage.getItem('scores'));
+// if(updateScore===null){
+//   updateScore=scoreKeep;
+// }
+debugger;
 let infoShame="";
 let infoFame="";
 
@@ -632,3 +653,32 @@ function reloadPage(){
 
   window.location.reload();
 }
+
+function startGame(){
+  document.querySelector(".loadingScreenOutter").style.display="none";
+  document.querySelector(".loadingScreenInner").style.display="none";
+  level1();
+}
+
+function ruler(){
+
+  console.log(5);
+let isVisible=document.querySelector("#controls1");
+console.log(isVisible);
+
+if(isVisible.style.display==="none"){
+  document.querySelector(".rules1").style.visibility="block";
+}
+else{
+document.querySelector(".rules1").style.visibility="none";
+}
+// else if(isVisible==="visible"){
+  // document.querySelector(".rules1").style.visibility="hidden";
+// }
+
+// else{
+  // document.querySelector(".loadingScreenOutter").style.visibility=hidden;
+// }
+
+}
+// document.querySelector()

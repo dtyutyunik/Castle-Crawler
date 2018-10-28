@@ -13,32 +13,46 @@
 
 <body>
 
+  <div class=loadingScreenOutter>
+    <div class=loadingScreenInner>
+      <h1>Castle Crawler</h1>
+      <div class="character1"></div>
+        <div class="princess1"></div>
+        <div class="loadingSkel1"></div>
+        <div class="loadingSkel2"></div>
+        <div class="loadingSkel3"></div>
+        <div class="castle"></div>
+        <button class="story">Story</button>
+        <button class="controls" onclick="ruler();">Controls</button>
+        <button class="playGame" onclick="startGame();">Play Game</button>
+
+        <div id="controls1">
+          <!-- <h1>Controls</h1> -->
+        <!-- <p>Keyboard: Up, Down, Left, Right to move</p> -->
+        <!-- <p>Press A on princess</p> -->
+        </div>
+    </div>
+
+  </div>
 
   <div class="container">
-    <!-- so game outter will always be the maximum container of 1000 by 1000px -->
-    <!-- the logic is that the spacing between game and menu won't change -->
-    <div class="gameOutter">
-      <!-- game inner will change based on what we want -->
-      <!-- the logic is that if we want -->
-      <div class="gameInner">
 
+    <div class="gameOutter">
+      <div class="gameInner">
       <div class="character"></div>
-      <!-- <div class="skeleton"></div> -->
       </div>
     </div>
 
-  <!-- <div class="rightSide"> -->
       <div class="title">Castle Crawler</div>
       <div class="heartContainer"></div>
-    <div class="timeAlive"></div>
-    <div class="hallOfFame">
+      <div class="timeAlive"></div>
+      <div class="hallOfFame">
         <h1>Contenders</h1>
         <h2>Heros</h2>
         <ol class="fame">Hall of Fame</ol>
         <h2>Wannabe's</h2>
         <ol class="shame"></ol>
       </div>
-<!-- </div> -->
 
 </body>
 
