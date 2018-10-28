@@ -38,7 +38,7 @@ Upon reaching the staircase you go to next floor. In the sense of around your lo
 8. Ways to lose: Either lose all three lives or run out of time before touching the princess
 9. Upon win or loss, a prompt asking for your name will appear and will store your play time, name, and status in the leaderboard/Hall of Fame
 
-Functions needed:
+##Functions needed:
 `getName()`
 `generateboard()`
 `generateObstacle()`
@@ -52,8 +52,8 @@ Functions needed:
 `timeEnd()`
 `recordScore()`
 
-Code Most Proud of:
-
+##Code Most Proud of:
+```
 removeStuff("walls",walls);
 
 function removeStuff(name,item){
@@ -78,8 +78,18 @@ function removeStuff(name,item){
     stairCase=[];
   }
 }
+```
 
+WireFrame images:
+![Overview](Overview.JPG)
+![Gameplay](Gameplay.JPG)
 
+Game images:
+![Landing Page](Landing-Page.PNG)
+![Level 1](Level1.PNG)
+![Level 2](Level2.PNG)
+![Final Level](Final-Level.PNG)
+![Final Level- Time up](Time-Up.PNG)
 
 Link to github: <https://github.com/dtyutyunik/Castle-Crawler>
 Link to website: <colorful-sofa.surge.sh>

@@ -238,7 +238,7 @@ function finalLevel(){
 
   dragon = [
     {x: 5, y: 7},
-    {x: 6, y: 8},
+    {x: 4, y: 8},
   ];
 
   placeObjects("walls", walls, "wall.png",100);
@@ -569,7 +569,7 @@ function displayHearts(){
 
 }
 
-let timer=9997;
+let timer=30;
 
 function showTime(){
   let over60=Math.floor(timer/60);
