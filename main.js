@@ -569,7 +569,7 @@ function displayHearts(){
 
 }
 
-let timer=9000;
+let timer=24;
 
 function showTime(){
   let over60=Math.floor(timer/60);
