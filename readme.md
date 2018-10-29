@@ -81,15 +81,15 @@ function removeStuff(name,item){
 ```
 
 WireFrame images:
-![Overview](wireFrame/Overview.JPG)
-![Gameplay](wireFrame/Gameplay.JPG)
+![Overview](wireFrame/Overview.jpg)
+![Gameplay](wireFrame/Gameplay.jpg)
 
 Game images:
-![Landing Page](/GamePlay-Images/Landing-Page.PNG)
-![Level 1](/GamePlay-Images/Level1.PNG)
-![Level 2](/GamePlay-Images/Level2.PNG)
-![Final Level](/GamePlay-Images/Final-Level.PNG)
-![Final Level- Time up](/GamePlay-Images/Time-Up.PNG)
+![Landing-Page](/GamePlay-Images/Landing-Page.PNG)
+![Level-1](/GamePlay-Images/Level1.PNG)
+![Level-2](/GamePlay-Images/Level2.PNG)
+![Final-Level](/GamePlay-Images/Final-Level.PNG)
+![Final-Level-Time up](/GamePlay-Images/Time-Up.PNG)
 
 Link to github: <https://github.com/dtyutyunik/Castle-Crawler>
 Link to website: <http://colorful-sofa.surge.sh>
