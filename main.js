@@ -111,7 +111,7 @@ let newItem=document.createElement('div');
 
 //loads level 1, places the objects and makes them move
 function level1(){
-  createBoard(900,900,"black");
+  createBoard(1000,1000,"black");
   createHearts();
   placeObjects("hero", hero, "hero.gif",100);
   placeObjects("walls", walls, "wall.png",100);
@@ -136,7 +136,7 @@ function level1(){
 
 function level2(){
   floor++;
-  createBoard(900,900,"black");
+  createBoard(1000,1000,"black");
   removeStuff("walls",walls);
   removeStuff("skeletons",skeletons);
   removeStuff("stairCase",stairCase);
@@ -569,7 +569,7 @@ function displayHearts(){
 
 }
 
-let timer=30;
+let timer=9000;
 
 function showTime(){
   let over60=Math.floor(timer/60);

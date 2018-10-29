@@ -231,6 +231,7 @@ h1.landing {
   color: white;
   font-family: 'Press Start 2P', cursive;
   max-width: 300px;
+
 }
 
 .timeAlive {
@@ -238,7 +239,7 @@ h1.landing {
   font-size: 50px;
   text-align: center;
   color: #61C06E;
-  border: 2px solid gray;
+  border: 1px solid gray;
   background: black;
   min-width: 98%;
   font-family: 'Press Start 2P', cursive;
@@ -267,7 +268,7 @@ h1.landing {
 
 .hallOfFame {
   grid-area: fame;
-  border: 2px solid gray;
+  border: 1px solid gray;
   background: transparent;
   overflow: scroll;
   color: white;
@@ -277,7 +278,7 @@ h1.landing {
   grid-area: heartContainer;
   height: 100px;
   display: flex;
-  border: 2px solid gray;
+  border: 1px solid gray;
   color: white;
   background: black;
 }
