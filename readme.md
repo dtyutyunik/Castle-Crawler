@@ -1,6 +1,6 @@
-#Name: Castle Crawler
+# Name: Castle Crawler
 
-##Synopsis:
+## Synopsis:
 You are a hero trying to climb the castle to rescue the princess.
 In classic gaming you will have 3 lives to win the game reflected via hearts.
 Their will be a time clock on the side. This time clock will stop once you die or win the game aka talk to the princess.
@@ -38,7 +38,7 @@ Upon reaching the staircase you go to next floor. In the sense of around your lo
 8. Ways to lose: Either lose all three lives or run out of time before touching the princess
 9. Upon win or loss, a prompt asking for your name will appear and will store your play time, name, and status in the leaderboard/Hall of Fame
 
-##Functions needed:
+## Functions needed:
 `getName()`
 `generateboard()`
 `generateObstacle()`
@@ -52,7 +52,7 @@ Upon reaching the staircase you go to next floor. In the sense of around your lo
 `timeEnd()`
 `recordScore()`
 
-##Code Most Proud of:
+## Code Most Proud of:
 ```
 removeStuff("walls",walls);
 
