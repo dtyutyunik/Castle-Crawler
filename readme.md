@@ -33,7 +33,7 @@ Upon reaching the staircase you go to next floor. In the sense of around your lo
 4. You start with 3 lives and can only have a total of 3 lives.
 5. On certain stages their will be enemies that move up/down or left/right--> linear
     ⋅⋅* if you touch enemy you lose a life.
-6. once you get to the ladder at end of the level the stage reloads around you and now your at the next level
+6. Once you get to the ladder at end of the level the stage reloads around you and now your at the next level
 7. Ways to Win: Touch the princess and press a on keyboard before time runs out.
 8. Ways to lose: Either lose all three lives or run out of time before touching the princess
 9. Upon win or loss, a prompt asking for your name will appear and will store your play time, name, and status in the leaderboard/Hall of Fame
